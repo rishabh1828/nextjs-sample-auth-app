@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 import jwt from 'jsonwebtoken';
 
-const SECRET_KEY = 'secretOrKeyJWTRandom';
+const SECRET_KEY: any = process.env.JWT_KEY;
 
 export function verifyToken(jwtToken: any) {
 	try {

@@ -2,8 +2,7 @@ import jwt from 'jsonwebtoken';
 import { query } from '../../services/db';
 
 /* JWT secret key */
-// const KEY = process.env.JWT_KEY;
-const KEY = 'secretOrKeyJWTRandom';
+const KEY: any = process.env.JWT_KEY;
 
 async function getUser() {
     const rows = await query(
