@@ -1,0 +1,31 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+}
+
+.links {
+  	display: flex;
+	align-items: center;
+	top: 45px;
+    position: absolute;
+    right: 75px;
+}
+
+.navlink {
+	list-style: none;
+	margin: 0 0.75rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+.navlink p {
+	margin: 0;
+}
+
+.navlink:hover {
+  	color: red;
+}
