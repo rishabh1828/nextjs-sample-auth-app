@@ -8,21 +8,19 @@ async function addItemToCart() {
   	return rows[0];
 }
 
-export default (req: any, res: any) => {
-    return new Promise(async resolve => {
-        const { method } = req;
-        try {
-            switch (method) {
-                case 'GET':
-					const data = await addItemToCart();
-					return res.status(200).json({
-						success: true,
-                        data 
-					});
+export default async (req: any, res: any) => {
+	const { method } = req;
+	try {
+		switch (method) {
+			case 'GET':
+				const data = await addItemToCart();
+				return res.status(200).json({
+					success: true,
+					data 
+				});
 
-			}
-		} catch (err) {
-			console.error(err);
 		}
-	});
+	} catch (err) {
+		console.error(err);
+	}
 }

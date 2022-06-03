@@ -13,7 +13,7 @@ import { addUser } from '../redux/store';
 
 const Home: NextPage = ({ baseApiUrl, profile, products, data }: any) => {
     const dispatch = useDispatch();
-    if (profile.username) {
+    if (profile && profile.username) {
         dispatch(addUser(profile.username));
     }
 

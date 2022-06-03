@@ -12,20 +12,18 @@ async function addItemToCart(data: any) {
   	return rows[0];
 }
 
-export default (req: any, res: any) => {
-    return new Promise(async resolve => {
-        const { method } = req;
-        try {
-            switch (method) {
-                case 'PUT':
-					await addItemToCart(req.body);
-					return res.status(200).json({
-						success: true
-					});
+export default async (req: any, res: any) => {
+	const { method } = req;
+	try {
+		switch (method) {
+			case 'PUT':
+				await addItemToCart(req.body);
+				return res.status(200).json({
+					success: true
+				});
 
-			}
-		} catch (err) {
-			console.error(err);
 		}
-	});
+	} catch (err) {
+		console.error(err);
+	}
 }

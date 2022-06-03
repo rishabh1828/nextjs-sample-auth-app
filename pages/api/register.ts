@@ -8,20 +8,18 @@ async function registerUser(data: any) {
   	return rows[0];
 }
 
-export default (req: any, res: any) => {
-    return new Promise(async resolve => {
-        const { method } = req;
-        try {
-            switch (method) {
-                case 'PUT':
-					await registerUser(req.body);
-					return res.status(200).json({
-						success: true
-					});
+export default async (req: any, res: any) => {
+	const { method } = req;
+	try {
+		switch (method) {
+			case 'PUT':
+				await registerUser(req.body);
+				return res.status(200).json({
+					success: true
+				});
 
-			}
-		} catch (err) {
-			console.error(err);
 		}
-	});
+	} catch (err) {
+		console.error(err);
+	}
 }
